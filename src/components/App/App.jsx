@@ -10,7 +10,6 @@ import { fetchContacts } from "../../redux/contactsOps";
 
 function App() {
   const dispatch = useDispatch();
-  const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
 
   useEffect(() => {
@@ -23,7 +22,6 @@ function App() {
       <ContactForm />
       <SearchBox />
       {error && <b>Ooops ... something went wrong!</b>}
-      {loading && <Loader />}
       <ContactList />
     </div>
   );
